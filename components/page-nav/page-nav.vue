@@ -4,7 +4,7 @@
 			<image class="logo" src="https://cdn.uviewui.com/uview/common/logo.png" mode="widthFix"></image>
 			<view class="nav-info">
 				<view class="nav-title__text">
-					{{$t('common.title')}}
+					<text class="nav-info__title__text">uView {{version}}</text>
 				</view>
 				<view class="nav-slogan">
 					 {{$t('common.intro')}}
@@ -29,6 +29,11 @@
 		computed: {
 			lang() {
 				return this.$i18n.locale == 'zh' ? 'zh' : 'en';
+			}
+		},
+		data() {
+			return {
+				version: uni.$u.config.v
 			}
 		},
 		methods: {
